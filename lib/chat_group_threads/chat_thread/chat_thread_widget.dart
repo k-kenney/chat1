@@ -110,8 +110,7 @@ class _ChatThreadWidgetState extends State<ChatThreadWidget> {
                               ),
                             ),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  2.0, 2.0, 2.0, 2.0),
+                              padding: const EdgeInsets.all(2.0),
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(8.0),
                                 child: CachedNetworkImage(
@@ -291,8 +290,7 @@ class _ChatThreadWidgetState extends State<ChatThreadWidget> {
                           ),
                         ),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              2.0, 2.0, 2.0, 2.0),
+                          padding: const EdgeInsets.all(2.0),
                           child: AuthUserStreamWidget(
                             builder: (context) => ClipRRect(
                               borderRadius: BorderRadius.circular(8.0),

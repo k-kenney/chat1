@@ -7,6 +7,7 @@ import '/backend/backend.dart';
 import '/auth/base_auth_user_provider.dart';
 
 import '/index.dart';
+import '/main.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
@@ -73,14 +74,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? const Chat2MainWidget() : const Auth2CreateWidget(),
+          appStateNotifier.loggedIn ? const NavBarPage() : const Auth2CreateWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) => appStateNotifier.loggedIn
-              ? const Chat2MainWidget()
-              : const Auth2CreateWidget(),
+          builder: (context, _) =>
+              appStateNotifier.loggedIn ? const NavBarPage() : const Auth2CreateWidget(),
         ),
         FFRoute(
           name: 'auth_2_Create',
@@ -125,7 +125,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'chat_2_main',
           path: '/chat2Main',
-          builder: (context, params) => const Chat2MainWidget(),
+          builder: (context, params) => params.isEmpty
+              ? const NavBarPage(initialPage: 'chat_2_main')
+              : const Chat2MainWidget(),
         ),
         FFRoute(
           name: 'chat_2_InviteUsers',
@@ -133,9 +135,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           asyncParams: {
             'chatRef': getDoc(['chats'], ChatsRecord.fromSnapshot),
           },
-          builder: (context, params) => Chat2InviteUsersWidget(
-            chatRef: params.getParam('chatRef', ParamType.Document),
-          ),
+          builder: (context, params) => params.isEmpty
+              ? const NavBarPage(initialPage: 'chat_2_InviteUsers')
+              : Chat2InviteUsersWidget(
+                  chatRef: params.getParam('chatRef', ParamType.Document),
+                ),
         ),
         FFRoute(
           name: 'image_Details',
@@ -346,13 +350,20 @@ class FFRoute {
                   key: state.pageKey,
                   child: child,
                   transitionDuration: transitionInfo.duration,
-                  transitionsBuilder: PageTransition(
+                  transitionsBuilder:
+                      (context, animation, secondaryAnimation, child) =>
+                          PageTransition(
                     type: transitionInfo.transitionType,
                     duration: transitionInfo.duration,
                     reverseDuration: transitionInfo.duration,
                     alignment: transitionInfo.alignment,
                     child: child,
-                  ).transitionsBuilder,
+                  ).buildTransitions(
+                    context,
+                    animation,
+                    secondaryAnimation,
+                    child,
+                  ),
                 )
               : MaterialPage(key: state.pageKey, child: child);
         },

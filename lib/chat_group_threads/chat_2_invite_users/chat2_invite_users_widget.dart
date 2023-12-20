@@ -86,31 +86,37 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                'Invite Friends',
-                style: FlutterFlowTheme.of(context).headlineSmall,
+              Padding(
+                padding: const EdgeInsetsDirectional.fromSTEB(15.0, 10.0, 0.0, 0.0),
+                child: Text(
+                  'Invite Friends',
+                  style: FlutterFlowTheme.of(context).headlineSmall,
+                ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(15.0, 4.0, 0.0, 0.0),
                 child: Text(
                   'Select users from below to start a chat.',
-                  style: FlutterFlowTheme.of(context).labelSmall,
+                  style: FlutterFlowTheme.of(context).labelSmall.override(
+                        fontFamily: 'Source Sans Pro',
+                        color: const Color(0xFFCE035F),
+                      ),
                 ),
               ),
             ],
           ),
           actions: [
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 12.0, 4.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 20.0, 4.0),
               child: FlutterFlowIconButton(
-                borderColor: FlutterFlowTheme.of(context).alternate,
+                borderColor: const Color(0xFFCE035F),
                 borderRadius: 12.0,
-                borderWidth: 1.0,
+                borderWidth: 3.0,
                 buttonSize: 44.0,
                 fillColor: FlutterFlowTheme.of(context).secondaryBackground,
-                icon: Icon(
+                icon: const Icon(
                   Icons.close_rounded,
-                  color: FlutterFlowTheme.of(context).secondaryText,
+                  color: Color(0xFFCE035F),
                   size: 24.0,
                 ),
                 onPressed: () async {
@@ -129,7 +135,8 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
+                  padding:
+                      const EdgeInsetsDirectional.fromSTEB(15.0, 20.0, 25.0, 20.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -270,9 +277,7 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
                                           ),
                                         ),
                                         child: Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  2.0, 2.0, 2.0, 2.0),
+                                          padding: const EdgeInsets.all(2.0),
                                           child: ClipRRect(
                                             borderRadius:
                                                 BorderRadius.circular(8.0),
@@ -386,7 +391,7 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
               ],
             ),
             Align(
-              alignment: const AlignmentDirectional(0.00, 1.00),
+              alignment: const AlignmentDirectional(0.0, 1.0),
               child: Container(
                 width: double.infinity,
                 height: 140.0,
@@ -401,7 +406,7 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
                     end: const AlignmentDirectional(0, 1.0),
                   ),
                 ),
-                alignment: const AlignmentDirectional(0.00, 0.00),
+                alignment: const AlignmentDirectional(0.0, 0.0),
                 child: Padding(
                   padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                   child: FFButtonWidget(
