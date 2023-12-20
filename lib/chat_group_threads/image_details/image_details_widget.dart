@@ -145,8 +145,7 @@ class _ImageDetailsWidgetState extends State<ImageDetailsWidget>
             children: [
               Expanded(
                 child: Padding(
-                  padding:
-                      const EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 12.0, 12.0),
+                  padding: const EdgeInsets.all(12.0),
                   child: Hero(
                     tag: widget.chatMessage!.image,
                     transitionOnUserGestures: true,
@@ -210,8 +209,7 @@ class _ImageDetailsWidgetState extends State<ImageDetailsWidget>
                               ),
                             ),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  2.0, 2.0, 2.0, 2.0),
+                              padding: const EdgeInsets.all(2.0),
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(8.0),
                                 child: CachedNetworkImage(

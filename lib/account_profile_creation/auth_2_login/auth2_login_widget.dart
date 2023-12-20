@@ -101,66 +101,36 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
           height: double.infinity,
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [
-                FlutterFlowTheme.of(context).primary,
-                FlutterFlowTheme.of(context).tertiary
-              ],
+              colors: [FlutterFlowTheme.of(context).primary, const Color(0xFF050A30)],
               stops: const [0.0, 1.0],
               begin: const AlignmentDirectional(0.87, -1.0),
               end: const AlignmentDirectional(-0.87, 1.0),
             ),
           ),
-          alignment: const AlignmentDirectional(0.00, -1.00),
+          alignment: const AlignmentDirectional(0.0, -1.0),
           child: SingleChildScrollView(
             child: Column(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 70.0, 0.0, 32.0),
-                  child: Container(
-                    width: 200.0,
-                    height: 70.0,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(16.0),
-                    ),
-                    alignment: const AlignmentDirectional(0.00, 0.00),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 12.0, 0.0),
-                          child: Icon(
-                            Icons.flourescent_rounded,
-                            color: FlutterFlowTheme.of(context).info,
-                            size: 44.0,
-                          ),
-                        ),
-                        Text(
-                          'flow.io',
-                          style: FlutterFlowTheme.of(context)
-                              .displaySmall
-                              .override(
-                                fontFamily: 'Nunito',
-                                color: FlutterFlowTheme.of(context).info,
-                              ),
-                        ),
-                      ],
-                    ),
+                Container(
+                  width: 200.0,
+                  height: 33.0,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(16.0),
                   ),
+                  alignment: const AlignmentDirectional(0.0, 0.0),
                 ),
                 Padding(
                   padding:
-                      const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
+                      const EdgeInsetsDirectional.fromSTEB(20.0, 16.0, 20.0, 16.0),
                   child: Container(
                     width: double.infinity,
                     constraints: const BoxConstraints(
                       maxWidth: 570.0,
                     ),
                     decoration: BoxDecoration(
-                      color: FlutterFlowTheme.of(context).secondaryBackground,
+                      color: FlutterFlowTheme.of(context).primaryBackground,
                       boxShadow: const [
                         BoxShadow(
                           blurRadius: 4.0,
@@ -171,14 +141,27 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                       borderRadius: BorderRadius.circular(12.0),
                     ),
                     child: Align(
-                      alignment: const AlignmentDirectional(0.00, 0.00),
+                      alignment: const AlignmentDirectional(0.0, 0.0),
                       child: Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
-                            32.0, 32.0, 32.0, 32.0),
+                        padding: const EdgeInsets.all(32.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
+                            Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                ClipRRect(
+                                  borderRadius: BorderRadius.circular(8.0),
+                                  child: Image.asset(
+                                    'assets/images/chatterbox-logo2.png',
+                                    width: 180.0,
+                                    fit: BoxFit.contain,
+                                  ),
+                                ),
+                              ],
+                            ),
                             Text(
                               'Welcome Back',
                               textAlign: TextAlign.center,
@@ -242,7 +225,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                     ),
                                     filled: true,
                                     fillColor: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
+                                        .secondaryBackground,
                                   ),
                                   style: FlutterFlowTheme.of(context).bodyLarge,
                                   keyboardType: TextInputType.emailAddress,
@@ -303,7 +286,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                     ),
                                     filled: true,
                                     fillColor: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
+                                        .secondaryBackground,
                                     suffixIcon: InkWell(
                                       onTap: () => setState(
                                         () => _model.passwordVisibility =
@@ -373,7 +356,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                               ),
                             ),
                             Align(
-                              alignment: const AlignmentDirectional(0.00, 0.00),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 24.0),
@@ -403,6 +386,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                 text: 'Continue with Google',
                                 icon: const FaIcon(
                                   FontAwesomeIcons.google,
+                                  color: Color(0xFF050A30),
                                   size: 20.0,
                                 ),
                                 options: FFButtonOptions(
@@ -453,7 +437,8 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                       text: 'Continue with Apple',
                                       icon: const FaIcon(
                                         FontAwesomeIcons.apple,
-                                        size: 20.0,
+                                        color: Color(0xFF050A30),
+                                        size: 24.0,
                                       ),
                                       options: FFButtonOptions(
                                         width: double.infinity,
@@ -489,7 +474,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
 
                             // You will have to add an action on this rich text to go to your login page.
                             Align(
-                              alignment: const AlignmentDirectional(0.00, 0.00),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 12.0, 0.0, 12.0),
@@ -563,6 +548,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                         fontFamily: 'Source Sans Pro',
                                         color: FlutterFlowTheme.of(context)
                                             .primaryText,
+                                        fontWeight: FontWeight.bold,
                                       ),
                                   elevation: 0.0,
                                   borderSide: BorderSide(

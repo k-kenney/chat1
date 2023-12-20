@@ -77,7 +77,7 @@ class _UserListSmallWidgetState extends State<UserListSmallWidget> {
                   ),
                 ),
                 child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(2.0, 2.0, 2.0, 2.0),
+                  padding: const EdgeInsets.all(2.0),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(8.0),
                     child: Image.network(
@@ -138,7 +138,7 @@ class _UserListSmallWidgetState extends State<UserListSmallWidget> {
                     ),
                   ),
                   child: Align(
-                    alignment: const AlignmentDirectional(0.00, 0.00),
+                    alignment: const AlignmentDirectional(0.0, 0.0),
                     child: Padding(
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),

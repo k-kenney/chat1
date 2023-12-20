@@ -217,7 +217,7 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget> {
                                   ),
                                 ),
                                 Align(
-                                  alignment: const AlignmentDirectional(-1.00, -1.00),
+                                  alignment: const AlignmentDirectional(-1.0, -1.0),
                                   child: FlutterFlowIconButton(
                                     borderColor:
                                         FlutterFlowTheme.of(context).error,
@@ -256,8 +256,7 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget> {
                   key: _model.formKey,
                   autovalidateMode: AutovalidateMode.disabled,
                   child: Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 12.0, 12.0),
+                    padding: const EdgeInsets.all(12.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.start,
@@ -502,7 +501,7 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget> {
                                 ),
                               ),
                               Align(
-                                alignment: const AlignmentDirectional(1.00, 0.00),
+                                alignment: const AlignmentDirectional(1.0, 0.0),
                                 child: Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 4.0, 6.0, 4.0),
@@ -512,13 +511,11 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget> {
                                     borderRadius: 20.0,
                                     borderWidth: 1.0,
                                     buttonSize: 40.0,
-                                    fillColor:
-                                        FlutterFlowTheme.of(context).accent1,
                                     icon: Icon(
                                       Icons.send_rounded,
                                       color:
                                           FlutterFlowTheme.of(context).primary,
-                                      size: 20.0,
+                                      size: 24.0,
                                     ),
                                     onPressed: () async {
                                       final firestoreBatch =

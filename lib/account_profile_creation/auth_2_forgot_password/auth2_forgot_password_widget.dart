@@ -99,59 +99,28 @@ class _Auth2ForgotPasswordWidgetState extends State<Auth2ForgotPasswordWidget>
           height: double.infinity,
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [
-                FlutterFlowTheme.of(context).primary,
-                FlutterFlowTheme.of(context).tertiary
-              ],
+              colors: [FlutterFlowTheme.of(context).primary, const Color(0xFF050A30)],
               stops: const [0.0, 1.0],
               begin: const AlignmentDirectional(0.87, -1.0),
               end: const AlignmentDirectional(-0.87, 1.0),
             ),
           ),
-          alignment: const AlignmentDirectional(0.00, -1.00),
+          alignment: const AlignmentDirectional(0.0, -1.0),
           child: SingleChildScrollView(
             child: Column(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 70.0, 0.0, 32.0),
-                  child: Container(
-                    width: 200.0,
-                    height: 70.0,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(16.0),
-                    ),
-                    alignment: const AlignmentDirectional(0.00, 0.00),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 12.0, 0.0),
-                          child: Icon(
-                            Icons.flourescent_rounded,
-                            color: FlutterFlowTheme.of(context).info,
-                            size: 44.0,
-                          ),
-                        ),
-                        Text(
-                          'flow.io',
-                          style: FlutterFlowTheme.of(context)
-                              .displaySmall
-                              .override(
-                                fontFamily: 'Nunito',
-                                color: FlutterFlowTheme.of(context).info,
-                              ),
-                        ),
-                      ],
-                    ),
+                Container(
+                  width: 200.0,
+                  height: 70.0,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(16.0),
                   ),
+                  alignment: const AlignmentDirectional(0.0, 0.0),
                 ),
                 Padding(
-                  padding:
-                      const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
+                  padding: const EdgeInsets.all(16.0),
                   child: Container(
                     width: double.infinity,
                     constraints: const BoxConstraints(
@@ -169,7 +138,7 @@ class _Auth2ForgotPasswordWidgetState extends State<Auth2ForgotPasswordWidget>
                       borderRadius: BorderRadius.circular(12.0),
                     ),
                     child: Align(
-                      alignment: const AlignmentDirectional(0.00, 0.00),
+                      alignment: const AlignmentDirectional(0.0, 0.0),
                       child: Padding(
                         padding: const EdgeInsetsDirectional.fromSTEB(
                             32.0, 20.0, 32.0, 32.0),
@@ -214,7 +183,7 @@ class _Auth2ForgotPasswordWidgetState extends State<Auth2ForgotPasswordWidget>
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 8.0, 0.0, 24.0),
                               child: Text(
-                                'Please fill out your email belo in order to recieve a reset password link.',
+                                'Please fill out your email below in order to recieve a reset password link.',
                                 textAlign: TextAlign.start,
                                 style: FlutterFlowTheme.of(context).labelLarge,
                               ),

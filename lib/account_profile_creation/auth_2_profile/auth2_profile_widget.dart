@@ -44,7 +44,27 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
         ),
       ],
     ),
-    'buttonOnPageLoadAnimation': AnimationInfo(
+    'buttonOnPageLoadAnimation1': AnimationInfo(
+      trigger: AnimationTrigger.onPageLoad,
+      effects: [
+        VisibilityEffect(duration: 400.ms),
+        FadeEffect(
+          curve: Curves.easeInOut,
+          delay: 400.ms,
+          duration: 600.ms,
+          begin: 0.0,
+          end: 1.0,
+        ),
+        MoveEffect(
+          curve: Curves.easeInOut,
+          delay: 400.ms,
+          duration: 600.ms,
+          begin: const Offset(0.0, 60.0),
+          end: const Offset(0.0, 0.0),
+        ),
+      ],
+    ),
+    'buttonOnPageLoadAnimation2': AnimationInfo(
       trigger: AnimationTrigger.onPageLoad,
       effects: [
         VisibilityEffect(duration: 400.ms),
@@ -98,14 +118,14 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         body: Align(
-          alignment: const AlignmentDirectional(0.00, -1.00),
+          alignment: const AlignmentDirectional(0.0, -1.0),
           child: Container(
             width: double.infinity,
             constraints: const BoxConstraints(
               maxWidth: 770.0,
             ),
             decoration: BoxDecoration(
-              color: FlutterFlowTheme.of(context).secondaryBackground,
+              color: FlutterFlowTheme.of(context).primaryBackground,
             ),
             child: Column(
               mainAxisSize: MainAxisSize.max,
@@ -139,9 +159,8 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                             decoration: BoxDecoration(
                               gradient: LinearGradient(
                                 colors: [
-                                  const Color(0x00FFFFFF),
-                                  FlutterFlowTheme.of(context)
-                                      .secondaryBackground
+                                  FlutterFlowTheme.of(context).primary,
+                                  const Color(0xFF050A30)
                                 ],
                                 stops: const [0.0, 1.0],
                                 begin: const AlignmentDirectional(0.0, -1.0),
@@ -153,7 +172,7 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                             animationsMap['containerOnPageLoadAnimation']!),
                       ),
                       Align(
-                        alignment: const AlignmentDirectional(-1.00, 1.00),
+                        alignment: const AlignmentDirectional(-1.0, 1.0),
                         child: Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               24.0, 0.0, 0.0, 0.0),
@@ -161,16 +180,16 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                             width: 90.0,
                             height: 90.0,
                             decoration: BoxDecoration(
-                              color: FlutterFlowTheme.of(context).accent2,
+                              color: FlutterFlowTheme.of(context)
+                                  .primaryBackground,
                               shape: BoxShape.circle,
                               border: Border.all(
-                                color: FlutterFlowTheme.of(context).secondary,
+                                color: const Color(0xFF050A30),
                                 width: 2.0,
                               ),
                             ),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  4.0, 4.0, 4.0, 4.0),
+                              padding: const EdgeInsets.all(4.0),
                               child: AuthUserStreamWidget(
                                 builder: (context) => ClipRRect(
                                   borderRadius: BorderRadius.circular(50.0),
@@ -252,8 +271,7 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                         ),
                       ),
                       child: Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
-                            12.0, 12.0, 12.0, 12.0),
+                        padding: const EdgeInsets.all(12.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
@@ -272,7 +290,7 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                             ),
                             Expanded(
                               child: Align(
-                                alignment: const AlignmentDirectional(0.90, 0.00),
+                                alignment: const AlignmentDirectional(0.9, 0.0),
                                 child: Icon(
                                   Icons.arrow_forward_ios,
                                   color: FlutterFlowTheme.of(context)
@@ -317,8 +335,7 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                       ),
                     ),
                     child: Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(
-                          12.0, 12.0, 12.0, 12.0),
+                      padding: const EdgeInsets.all(12.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
@@ -337,7 +354,7 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                           ),
                           Expanded(
                             child: Align(
-                              alignment: const AlignmentDirectional(0.90, 0.00),
+                              alignment: const AlignmentDirectional(0.9, 0.0),
                               child: Icon(
                                 Icons.arrow_forward_ios,
                                 color:
@@ -374,8 +391,7 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                       ),
                     ),
                     child: Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(
-                          12.0, 12.0, 12.0, 12.0),
+                      padding: const EdgeInsets.all(12.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
@@ -394,7 +410,7 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                           ),
                           Expanded(
                             child: Align(
-                              alignment: const AlignmentDirectional(0.90, 0.00),
+                              alignment: const AlignmentDirectional(0.9, 0.0),
                               child: Icon(
                                 Icons.arrow_forward_ios,
                                 color:
@@ -408,39 +424,82 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                     ),
                   ),
                 ),
-                Align(
-                  alignment: const AlignmentDirectional(0.00, 0.00),
-                  child: Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
-                    child: FFButtonWidget(
-                      onPressed: () async {
-                        GoRouter.of(context).prepareAuthEvent();
-                        await authManager.signOut();
-                        GoRouter.of(context).clearRedirectLocation();
-
-                        context.goNamedAuth('auth_2_Create', context.mounted);
-                      },
-                      text: 'Log Out',
-                      options: FFButtonOptions(
-                        width: 150.0,
-                        height: 44.0,
+                Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Align(
+                      alignment: const AlignmentDirectional(0.0, 0.0),
+                      child: Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                        iconPadding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                        color: FlutterFlowTheme.of(context).primaryBackground,
-                        textStyle: FlutterFlowTheme.of(context).bodyLarge,
-                        elevation: 0.0,
-                        borderSide: BorderSide(
-                          color: FlutterFlowTheme.of(context).alternate,
-                          width: 1.0,
-                        ),
-                        borderRadius: BorderRadius.circular(12.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                        child: FFButtonWidget(
+                          onPressed: () async {
+                            GoRouter.of(context).prepareAuthEvent();
+                            await authManager.signOut();
+                            GoRouter.of(context).clearRedirectLocation();
+
+                            context.goNamedAuth(
+                                'auth_2_Create', context.mounted);
+                          },
+                          text: 'Log Out',
+                          options: FFButtonOptions(
+                            width: 150.0,
+                            height: 44.0,
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 0.0),
+                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 0.0),
+                            color:
+                                FlutterFlowTheme.of(context).primaryBackground,
+                            textStyle: FlutterFlowTheme.of(context).bodyLarge,
+                            elevation: 0.0,
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).alternate,
+                              width: 1.0,
+                            ),
+                            borderRadius: BorderRadius.circular(12.0),
+                          ),
+                        ).animateOnPageLoad(
+                            animationsMap['buttonOnPageLoadAnimation1']!),
                       ),
-                    ).animateOnPageLoad(
-                        animationsMap['buttonOnPageLoadAnimation']!),
-                  ),
+                    ),
+                    Align(
+                      alignment: const AlignmentDirectional(0.0, 0.0),
+                      child: Padding(
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                        child: FFButtonWidget(
+                          onPressed: () async {
+                            context.pushNamed('chat_2_main');
+                          },
+                          text: 'To Chats ',
+                          icon: const Icon(
+                            Icons.wechat_sharp,
+                            size: 15.0,
+                          ),
+                          options: FFButtonOptions(
+                            width: 150.0,
+                            height: 44.0,
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 0.0),
+                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 0.0),
+                            color:
+                                FlutterFlowTheme.of(context).primaryBackground,
+                            textStyle: FlutterFlowTheme.of(context).bodyLarge,
+                            elevation: 0.0,
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).alternate,
+                              width: 1.0,
+                            ),
+                            borderRadius: BorderRadius.circular(12.0),
+                          ),
+                        ).animateOnPageLoad(
+                            animationsMap['buttonOnPageLoadAnimation2']!),
+                      ),
+                    ),
+                  ].divide(const SizedBox(width: 30.0)),
                 ),
               ],
             ),

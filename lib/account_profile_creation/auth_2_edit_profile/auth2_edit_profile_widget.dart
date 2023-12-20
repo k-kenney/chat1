@@ -80,72 +80,68 @@ class _Auth2EditProfileWidgetState extends State<Auth2EditProfileWidget>
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+            Container(
+              width: double.infinity,
+              height: 130.0,
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [
+                    FlutterFlowTheme.of(context).primary,
+                    FlutterFlowTheme.of(context).error,
+                    FlutterFlowTheme.of(context).tertiary
+                  ],
+                  stops: const [0.0, 0.5, 1.0],
+                  begin: const AlignmentDirectional(-1.0, -1.0),
+                  end: const AlignmentDirectional(1.0, 1.0),
+                ),
+              ),
               child: Container(
-                width: double.infinity,
-                height: 130.0,
+                width: 100.0,
+                height: 200.0,
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
                       FlutterFlowTheme.of(context).primary,
-                      FlutterFlowTheme.of(context).error,
-                      FlutterFlowTheme.of(context).tertiary
+                      const Color(0xFF050A30)
                     ],
-                    stops: const [0.0, 0.5, 1.0],
-                    begin: const AlignmentDirectional(-1.0, -1.0),
-                    end: const AlignmentDirectional(1.0, 1.0),
+                    stops: const [0.0, 1.0],
+                    begin: const AlignmentDirectional(0.07, -1.0),
+                    end: const AlignmentDirectional(-0.07, 1.0),
                   ),
                 ),
-                child: Container(
-                  width: 100.0,
-                  height: 200.0,
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [
-                        const Color(0x00FFFFFF),
-                        FlutterFlowTheme.of(context).secondaryBackground
-                      ],
-                      stops: const [0.0, 1.0],
-                      begin: const AlignmentDirectional(0.0, -1.0),
-                      end: const AlignmentDirectional(0, 1.0),
-                    ),
-                  ),
-                  child: Align(
-                    alignment: const AlignmentDirectional(-1.00, 1.00),
-                    child: Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 24.0),
-                      child: FlutterFlowIconButton(
-                        borderColor: FlutterFlowTheme.of(context).accent4,
-                        borderRadius: 12.0,
-                        borderWidth: 1.0,
-                        buttonSize: 40.0,
-                        fillColor: FlutterFlowTheme.of(context).accent4,
-                        icon: Icon(
-                          Icons.arrow_back_rounded,
-                          color: FlutterFlowTheme.of(context).primaryText,
-                          size: 24.0,
-                        ),
-                        onPressed: () async {
-                          context.safePop();
-                        },
+                child: Align(
+                  alignment: const AlignmentDirectional(-1.0, 1.0),
+                  child: Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 24.0),
+                    child: FlutterFlowIconButton(
+                      borderColor: FlutterFlowTheme.of(context).accent4,
+                      borderRadius: 12.0,
+                      borderWidth: 1.0,
+                      buttonSize: 40.0,
+                      fillColor: FlutterFlowTheme.of(context).accent4,
+                      icon: Icon(
+                        Icons.arrow_back_rounded,
+                        color: FlutterFlowTheme.of(context).primaryText,
+                        size: 24.0,
                       ),
+                      onPressed: () async {
+                        context.safePop();
+                      },
                     ),
                   ),
                 ),
-              ).animateOnPageLoad(
-                  animationsMap['containerOnPageLoadAnimation']!),
-            ),
+              ),
+            ).animateOnPageLoad(animationsMap['containerOnPageLoadAnimation']!),
             Align(
-              alignment: const AlignmentDirectional(0.00, -1.00),
+              alignment: const AlignmentDirectional(0.0, -1.0),
               child: Container(
                 width: double.infinity,
                 constraints: const BoxConstraints(
                   maxWidth: 770.0,
                 ),
                 decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                  color: FlutterFlowTheme.of(context).primaryBackground,
                 ),
                 child: wrapWithModel(
                   model: _model.editProfileAuth2Model,

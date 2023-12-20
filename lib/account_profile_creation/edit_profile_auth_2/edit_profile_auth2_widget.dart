@@ -68,6 +68,20 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
         mainAxisSize: MainAxisSize.max,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          Row(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadius.circular(8.0),
+                child: Image.asset(
+                  'assets/images/chatterbox-logo2.png',
+                  width: 180.0,
+                  fit: BoxFit.contain,
+                ),
+              ),
+            ],
+          ),
           Padding(
             padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
             child: Text(
@@ -83,27 +97,26 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
             ),
           ),
           Align(
-            alignment: const AlignmentDirectional(0.00, -1.00),
+            alignment: const AlignmentDirectional(0.0, -1.0),
             child: Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
               child: Container(
                 width: 100.0,
                 height: 100.0,
                 decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).accent2,
+                  color: FlutterFlowTheme.of(context).secondaryBackground,
                   shape: BoxShape.circle,
                   border: Border.all(
-                    color: FlutterFlowTheme.of(context).secondary,
+                    color: FlutterFlowTheme.of(context).primary,
                     width: 2.0,
                   ),
                 ),
                 child: Align(
-                  alignment: const AlignmentDirectional(0.00, 0.00),
+                  alignment: const AlignmentDirectional(0.0, 0.0),
                   child: Stack(
                     children: [
                       Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(4.0, 4.0, 4.0, 4.0),
+                        padding: const EdgeInsets.all(4.0),
                         child: AuthUserStreamWidget(
                           builder: (context) => ClipRRect(
                             borderRadius: BorderRadius.circular(60.0),
@@ -122,8 +135,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                         ),
                       ),
                       Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(4.0, 4.0, 4.0, 4.0),
+                        padding: const EdgeInsets.all(4.0),
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(60.0),
                           child: CachedNetworkImage(
@@ -143,7 +155,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
             ),
           ),
           Align(
-            alignment: const AlignmentDirectional(0.00, -1.00),
+            alignment: const AlignmentDirectional(0.0, -1.0),
             child: Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 32.0),
               child: FFButtonWidget(
@@ -230,7 +242,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                 textCapitalization: TextCapitalization.words,
                 obscureText: false,
                 decoration: InputDecoration(
-                  labelText: 'Full Name',
+                  labelText: 'Name',
                   labelStyle: FlutterFlowTheme.of(context).labelMedium,
                   hintText: 'Your full name...',
                   hintStyle: FlutterFlowTheme.of(context).labelMedium,
@@ -267,7 +279,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                     borderRadius: BorderRadius.circular(8.0),
                   ),
                   filled: true,
-                  fillColor: FlutterFlowTheme.of(context).primaryBackground,
+                  fillColor: FlutterFlowTheme.of(context).secondaryBackground,
                   contentPadding:
                       const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 0.0, 12.0),
                 ),
@@ -288,11 +300,12 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                       valueOrDefault(currentUserDocument?.role, ''),
                 ),
                 options: const [
-                  'Owner/Founder',
-                  'Director',
-                  'Manager',
-                  'Mid-Manager',
-                  'Employee'
+                  'friend',
+                  'best friend',
+                  'acquaintance',
+                  'frenemy',
+                  'enemy',
+                  'we cool'
                 ],
                 onChanged: (val) => setState(() => _model.dropDownValue = val),
                 width: double.infinity,
@@ -304,7 +317,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                   color: FlutterFlowTheme.of(context).secondaryText,
                   size: 24.0,
                 ),
-                fillColor: FlutterFlowTheme.of(context).primaryBackground,
+                fillColor: FlutterFlowTheme.of(context).secondaryBackground,
                 elevation: 2.0,
                 borderColor: FlutterFlowTheme.of(context).alternate,
                 borderWidth: 2.0,
@@ -362,7 +375,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                     borderRadius: BorderRadius.circular(8.0),
                   ),
                   filled: true,
-                  fillColor: FlutterFlowTheme.of(context).primaryBackground,
+                  fillColor: FlutterFlowTheme.of(context).secondaryBackground,
                   contentPadding:
                       const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 0.0, 12.0),
                 ),
@@ -375,7 +388,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
             ),
           ),
           Align(
-            alignment: const AlignmentDirectional(0.00, 0.00),
+            alignment: const AlignmentDirectional(0.0, 0.0),
             child: Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 0.0),
               child: FFButtonWidget(
